@@ -1,0 +1,30 @@
+.header {
+  .name {
+    font-size: 80px;
+    font-weight: 700;
+    color: #776e65;
+  }
+  .score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #776e65;
+  }
+  .reset-button {
+    background: #8f7a66 !important;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    display: block;
+    text-align: center;
+    float: right;
+    font-weight: 700;
+    border-color: transparent;
+  }
+}
