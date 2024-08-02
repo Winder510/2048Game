@@ -48,10 +48,13 @@ export const ScoresContainer = () => {
 };
 
 const initState = (tiles: Tile[] = []): ScoresState => {
+  let bs = localStorage.getItem("bestScore2048");
+  let bestScore = bs ? parseInt(bs) : 0;
+
   return {
     score: 0,
     newPoints: 0,
-    bestScore: 0,
+    bestScore,
     tiles,
   };
 };
@@ -72,7 +75,6 @@ const stateReducer = (state: ScoresState, action: ACTIONTYPE): ScoresState => {
       ) {
         return state;
       }
-      console.log("   tiles.length", tiles);
       // handles restart
       if (
         tiles.length === 2 &&
@@ -102,7 +104,7 @@ const stateReducer = (state: ScoresState, action: ACTIONTYPE): ScoresState => {
 
       const score = state.score + newPoints;
       const bestScore = Math.max(score, state.bestScore);
-
+      localStorage.setItem("bestScore2048", bestScore.toString());
       return { tiles, newPoints, score, bestScore };
     }
     default: {
