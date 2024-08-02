@@ -1,9 +1,9 @@
 .main-layout {
+  min-width: 500px;
   width: 500px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   margin: auto;
-  border: 1px solid red;
   background-color: #faf8ef;
 }
